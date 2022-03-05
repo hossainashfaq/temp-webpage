@@ -8,6 +8,7 @@ const searchTemp = () =>
         fetch(url)
         .then(res => res.json())
         .then(data => displayTemp(data));
+        document.getElementById('city-input').value = '';
 }
 const setInnerText = (id, cityText) =>
 {
@@ -21,6 +22,6 @@ const displayTemp = (data) =>
     setInnerText('weather-type', data.weather[0].main);
     const conditionUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
     const imgIcon = document.getElementById('weather-icon');
-    console.log(data);
+    
     imgIcon.setAttribute('src', conditionUrl);
 }
