@@ -17,6 +17,7 @@ const setInnerText = (id, cityText) =>
 const displayTemp = (data) => 
 {
     setInnerText('city-name', data.name);
-    setInnerText('show-temp', data.temp);
+    setInnerText('show-temp', data.main.temp);
+    setInnerText('weather-type', data.weather[0].main);
     console.log(data);
 }
