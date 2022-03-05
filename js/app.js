@@ -19,5 +19,8 @@ const displayTemp = (data) =>
     setInnerText('city-name', data.name);
     setInnerText('show-temp', data.main.temp);
     setInnerText('weather-type', data.weather[0].main);
+    const conditionUrl = `https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png`;
+    const imgIcon = document.getElementById('weather-icon');
     console.log(data);
+    imgIcon.setAttribute('src', conditionUrl);
 }
